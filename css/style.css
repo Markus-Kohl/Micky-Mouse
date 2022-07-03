@@ -1,8 +1,6 @@
-*:hover {
-  outline: 1px blue solid; }
-
 body {
-  margin: 10%; }
+  display: flex;
+  justify-content: center; }
 
 @keyframes rotation {
   from {
@@ -21,7 +19,8 @@ body {
 .micky-mouse-container {
   width: 50rem;
   height: 50rem;
-  position: relative; }
+  position: relative;
+  z-index: -1; }
   .micky-mouse-container .ear-container {
     height: 12.5rem;
     width: 12.5rem; }
@@ -99,7 +98,7 @@ body {
           left: 0.4rem;
           transform: rotate(5deg);
           background: black;
-          z-index: 6; }
+          z-index: 5; }
       .micky-mouse-container .head-container .eye-container .right-eye {
         position: absolute;
         left: 75px;
@@ -231,3 +230,30 @@ body {
       .micky-mouse-container .head-container .mouth.right-side {
         left: 18rem;
         transform: rotate(20deg); }
+
+.confetti {
+  width: 15px;
+  height: 15px;
+  background: red;
+  top: -20px;
+  left: 0;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  position: absolute;
+  animation: confetti 10s ease-in infinite;
+  opacity: 1;
+  z-index: -1; }
+
+@keyframes confetti {
+  100% {
+    top: 100%;
+    transform: rotate(1100deg); } }
+
+@keyframes box-animation {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0.5; }
+  50% {
+    opacity: 0.75; }
+  100% {
+    opacity: 1; } }
